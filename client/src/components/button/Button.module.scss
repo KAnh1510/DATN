@@ -1,0 +1,24 @@
+.btn-addtocard {
+  color: #fff;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: none;
+  line-height: 22px;
+  position: relative;
+  padding: 10px 28px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  z-index: 1;
+  overflow: hidden;
+
+  &:hover {
+    color: var(--black);
+    border: 1px solid var(--primary);
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,12 @@
+.table-feedback {
+
+  .column-content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .done {
+    color: gray;
+    cursor: text !important;
+  }
+}

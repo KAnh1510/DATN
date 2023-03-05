@@ -1,0 +1,16 @@
+.wrapper {
+  width: 100%;
+  border-radius: 8px;
+  max-height: min((100vh - 96px) - 60px, 734px);
+  min-height: 100px;
+  padding-top: 8px;
+  padding-bottom: 20px;
+  overflow-y: overlay;
+}
+
+@media (max-width: 740px) {
+  .wrapper {
+    background-color: #fff;
+    min-width: 366px;
+  }
+}

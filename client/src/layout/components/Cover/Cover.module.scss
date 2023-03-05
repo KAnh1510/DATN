@@ -1,0 +1,20 @@
+.cover {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://file.hstatic.net/200000436739/file/banner-01_59e3f8b27f6d4f69969fc0c30ea6c2f9.jpg");
+  background-size: cover;
+  background-position-y: -72px;
+  position: fixed;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+  }
+}
+
+@media (min-width: 740px) and (max-width: 1023px) {
+  .cover {
+    width: 100%;
+    height: 100vh;
+    background-position: -70px 0px;
+  }
+}

@@ -1,0 +1,133 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 6px 10px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ededed;
+
+	svg {
+		width: 26px;
+		height: 26px;
+		opacity: 0.5;
+
+		&:hover {
+			cursor: pointer;
+			opacity: 1;
+		}
+	}
+}
+.title {
+	font-size: 1.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.search,
+.search-results {
+	width: 361px;
+}
+
+.search-results {
+	.wrapper {
+		display: flex;
+		align-items: center;
+		padding: 10px 10px;
+		border-bottom: 1px dotted #dfe0e1;
+
+		&:hover {
+			cursor: pointer;
+			.name {
+				color: var(--primary);
+			}
+		}
+	}
+
+	.image {
+		width: 40px;
+		height: 40px;
+		margin-right: 20px;
+		object-fit: cover;
+	}
+
+	.info {
+		margin-left: 12px;
+		flex: 1;
+	}
+
+	.name {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: pre-wrap;
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		font-weight: 500;
+		color: var(--black);
+		margin-bottom: 4px;
+	}
+
+	.prices {
+		font-size: 1.2rem;
+		color: #333333;
+		font-weight: 600;
+		line-height: 15px;
+	}
+}
+
+.search {
+	padding-left: 16px;
+	background-color: rgba(22, 24, 35, 0.06);
+	display: flex;
+	border: 1px solid #ececec;
+
+	input {
+		flex: 1;
+		height: 45px;
+		color: var(--black);
+		font-size: 1.6rem;
+		background-color: transparent;
+		caret-color: var(--primary);
+		display: block;
+	}
+
+	input:focus-within ~ .search-btn {
+		color: rgba(22, 24, 35, 0.75);
+	}
+
+	&:focus-within {
+		border-color: var(--primary);
+	}
+}
+
+.search-btn {
+	width: var(--search-button-width);
+	border-top-right-radius: var(--search-border-radius);
+	border-bottom-right-radius: var(--search-border-radius);
+	font-size: 1.8rem;
+	color: rgba(22, 24, 35, 0.34);
+
+	&:hover {
+		background-color: rgba(22, 24, 35, 0.03);
+		cursor: pointer;
+	}
+
+	&:active {
+		background-color: rgba(22, 24, 35, 0.03);
+	}
+}
+
+//responsive
+@media (max-width: 740px) {
+	.search,
+	.search-results {
+		width: 100%;
+	}
+	.search {
+		input {
+			padding: 0 10px;
+		}
+	}
+	.search-btn {
+		padding-right: 10px;
+	}
+}

@@ -1,0 +1,40 @@
+.header {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo {
+  width: 60%;
+}
+
+.icon_close {
+  svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
+
+.content {
+  ul {
+    padding: 20px;
+    li {
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      line-height: 3rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .icon_close {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,37 @@
+.profile {
+  padding: 24px;
+  width: 100%;
+
+  &-title {
+    color: gray;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  &-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &-right {
+      width: 70%;
+      position: relative;
+
+      .MuiPaper-root {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .MuiFormControl-root {
+        display: flex;
+        align-items: center;
+      }
+
+      .MuiInputBase-root {
+        width: 100%;
+      }
+    }
+  }
+
+}

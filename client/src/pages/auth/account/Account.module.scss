@@ -1,0 +1,40 @@
+.info-account {
+  p {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+  }
+  .title-detail {
+    text-transform: uppercase;
+    font-size: 1.5re;
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    border-bottom: 1px solid #ededed;
+    padding-bottom: 8px;
+  }
+
+  .account {
+    h3,
+    h2 {
+      font-weight: 500;
+      margin: 10px 0 5px;
+      color: var(--text-title);
+    }
+    h2 {
+      font-size: 1.6rem;
+      line-height: 21px;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.view-address {
+  font-weight: 500;
+  opacity: 0.8;
+
+  &:hover {
+    color: var(--primary);
+  }
+}

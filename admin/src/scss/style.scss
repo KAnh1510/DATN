@@ -1,0 +1,163 @@
+.new-item {
+  .top, .bottom {
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 10px;
+    margin: 20px;
+
+    h1 {
+      color: lightgray;
+      font-size: 20px;
+    }
+  }
+}
+
+.datatable {
+  height: 630px;
+  padding: 20px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .datatableTitle {
+    width: 100%;
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .button-right {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .link {
+      text-decoration: none;
+      color: green;
+      font-size: 16px;
+      font-weight: 400;
+      border: 1px solid green;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .datagrid {
+    border: none;
+    overflow: auto;
+  }
+
+  .cellWithImg {
+    display: flex;
+    align-items: center;
+
+    .cellImg {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+  }
+
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .button {
+      padding: 2px 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .viewButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: darkblue;
+      border: 1px dotted rgba(0, 0, 139, 0.596);
+      cursor: pointer;
+    }
+
+    .deleteButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: crimson;
+      border: 1px dotted rgba(220, 20, 60, 0.6);
+      cursor: pointer;
+    }
+
+    .view-btn {
+      color: darkblue;
+    }
+
+    .delete-btn {
+      color: crimson;
+    }
+
+    .shipping-btn {
+      color: #1deeee;
+    }
+
+    .done-btn {
+      color: green;
+    }
+  }
+}
+
+.MuiDataGrid-columnSeparator {
+  display: none !important;
+}
+
+.MuiDataGrid-row {
+  align-items: center;
+  border-bottom: 1px solid #f2f3f4;
+}
+
+.MuiDataGrid-cell {
+  outline: none !important;
+  border: none !important ;
+}
+
+.MuiDataGrid-columnHeaders {
+  border: none !important;
+  background-color: #F2F3F4;
+}
+
+.MuiDataGrid-virtualScroller {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.editButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  font-size: 12px;
+  color: #7451f8;
+  background-color: #7551f818;
+  cursor: pointer;
+  border-radius: 0px 0px 0px 5px;
+}
+
+.removeButton {
+  position: absolute;
+  top: 0;
+  right: 32px;
+  padding: 5px;
+  font-size: 12px;
+  color: #f8515f;
+  background-color: #f8515f18;
+  cursor: pointer;
+  border-radius: 0px 0px 0px 5px;
+}

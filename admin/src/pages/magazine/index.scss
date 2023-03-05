@@ -1,0 +1,34 @@
+.magazine {
+  &-content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &-content-item {
+    display: flex;
+    gap: 30px;
+  }
+
+  .magazine-img {
+    width: 300px;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  .magazine-title {
+    color: #111;
+    text-decoration: none;
+  }
+
+  .magazine-sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

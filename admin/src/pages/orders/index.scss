@@ -1,0 +1,33 @@
+.table-orders {
+	.MuiDataGrid-virtualScroller::-webkit-scrollbar {
+		display: block;
+		height: 6px;
+	}
+}
+.pending,
+.delivery,
+.cancel,
+.complete {
+	padding: 6px 8px;
+	border-radius: 4px;
+}
+
+.pending {
+	color: goldenrod;
+	background-color: rgba(189, 189, 3, 0.103);
+}
+
+.delivery {
+	color: #00e1ff;
+	background-color: rgba(0, 225, 255, 0.151);
+}
+
+.cancel {
+	color: #D0021B;
+	background-color: rgba(238, 56, 56, 0.122);
+}
+
+.complete {
+	color: rgb(0, 128, 0);
+	background-color: rgba(0, 128, 0, 0.122);
+}

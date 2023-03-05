@@ -1,0 +1,185 @@
+.app.dark {
+  background-color: #111;
+  color: rgb(156, 156, 156);
+
+  .chartGrid {
+    stroke: rgba(228, 228, 228, 0.219);
+  }
+
+  .table {
+    background-color: #111;
+
+    .tableCell {
+      color: gray;
+    }
+  }
+
+  .navbar {
+    color: #999;
+    border-color: #333;
+
+    .search {
+      border-color: gray;
+    }
+  }
+
+  .sidebar {
+    background-color: #111;
+    border-color: #333;
+
+    .top {
+      .logo {
+        color: #999;
+      }
+    }
+
+    hr {
+      border-color: #333;
+    }
+
+    ul {
+      li {
+        &:hover {
+          background-color: #333;
+        }
+
+        .icon {
+          color: #999;
+        }
+      }
+    }
+  }
+
+  .datatable {
+    .datagrid {
+      color: gray !important;
+      border: none;
+
+      .viewButton,
+      .deleteButton,
+      .cellWithStatus {
+        color: gray;
+        border: none;
+      }
+    }
+
+    .MuiDataGrid-cell,
+    .MuiDataGrid-columnHeader {
+      border-color: #6d6c6c;
+    }
+
+    .MuiDataGrid-virtualScrollerRenderZone {
+      border-bottom: 1px solid #6d6c6c;
+    }
+  }
+
+  .pagination {
+    color: gray;
+    background-color: #111;
+
+    button {
+      color: #ffffffa6;
+      border-color: gray;
+    }
+  }
+
+  input {
+    background-color: transparent;
+    color: gray;
+  }
+
+  .filter-user {
+    background-color: #111;
+    color: gray;
+  }
+
+  .cellAction {
+    .viewButton {
+      background-color: darkblue;
+      color: #fff;
+    }
+
+    .deleteButton {
+      background-color: crimson;
+      color: #fff;
+    }
+  }
+
+  .MuiDataGrid-columnHeaders {
+    background-color: #111 !important;
+    border-bottom: 1px solid gray !important;
+  }
+
+  .MuiDataGrid-row {
+    border-color: gray;
+  }
+
+  .sidebar .active li {
+    background-color: #333;
+  }
+
+  .form-select,
+  .profile-card {
+    color: gray;
+    background-color: #111;
+  }
+
+  .MuiFormLabel-root,
+  .MuiInputBase-root,
+  .color-label,
+  .gallery-label,
+  .ant-upload,
+  .MuiSelect-icon,
+  .datatable::-webkit-scrollbar,
+  .MuiIconButton-root,
+  .magazine-title {
+    color: gray;
+  }
+
+  .MuiOutlinedInput-notchedOutline,
+  .MuiOutlinedInput-root,
+  .color-item {
+    border-color: gray !important;
+  }
+
+  .MuiPaper-root,
+  .MuiSkeleton-root {
+    background-color: hsla(0, 100%, 100%, 0.05);
+    box-shadow: 0px 1px 1px 0px hsla(0, 0%, 0%, 0.14),
+      0px 2px 1px -1px hsla(0, 0%, 0%, 0.12),
+      0px 1px 3px 0px hsla(0, 0%, 0%, 0.2);
+  }
+}
+
+.notify-box.dark {
+  background-color: #111;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  color: gray;
+
+  .text-pop {
+    color: gray;
+  }
+
+  .text-pop-active {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .notify-item-active:hover {
+    background-color: #444444;
+  }
+}
+
+.dialog-logout.dark {
+  .MuiPaper-root {
+    background-color: #111;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    color: gray;
+  }
+
+  .MuiDialogContentText-root {
+    color: gray;
+  }
+}

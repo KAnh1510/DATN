@@ -1,0 +1,30 @@
+.a-feedback {
+  padding: 24px;
+
+  .details-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    .itemKey {
+      min-width: 100px;
+      display: inline-block;
+      max-width: 300px;
+      color: gray;
+      font-weight: 600;
+    }
+
+    .content {
+      min-height: 40px;
+      max-width: 200px;
+    }
+  }
+
+  .action-reply {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+  }
+}

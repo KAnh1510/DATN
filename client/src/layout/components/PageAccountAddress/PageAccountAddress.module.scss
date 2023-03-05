@@ -1,0 +1,57 @@
+.header {
+  padding: 30px 15px;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 60px;
+
+  h1 {
+    font-size: 4.2rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      margin: 50px auto 0;
+      background: var(--text-title);
+    }
+  }
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 35px;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.account-list ul li {
+  width: fit-content;
+  a {
+    display: block;
+    position: relative;
+    padding: 5px 0px;
+
+    &::before {
+      content: "\f192";
+      font-family: "FontAwesome";
+      font-size: 8px;
+      display: inline-block;
+      margin-right: 8px;
+      vertical-align: 2px;
+    }
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}

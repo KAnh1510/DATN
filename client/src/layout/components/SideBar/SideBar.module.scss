@@ -1,0 +1,43 @@
+.wrapper {
+	position: fixed;
+	left: 0;
+	top: 100px;
+	width: 220px;
+	padding-left: 20px;
+	z-index: 999;
+
+	ul {
+		padding-left: 20px;
+		margin-top: 20px;
+
+		li {
+			margin-bottom: 7px;
+
+			a,
+			.login-item {
+				font-family: "Helvetica", sans-serif !important;
+				font-size: 1.4rem;
+				font-weight: 600;
+				text-transform: uppercase;
+
+				&.active {
+					color: var(--secondary);
+				}
+				&:hover {
+					color: #d0021b;
+          cursor: pointer;
+				}
+			}
+      .login {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+		}
+	}
+}
+
+.logo {
+	width: 100%;
+	cursor: pointer;
+}

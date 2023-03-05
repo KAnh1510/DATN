@@ -1,0 +1,124 @@
+.wrapper {
+  float: right;
+}
+
+.banner {
+  img {
+    max-width: 100%;
+  }
+}
+
+.collection {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.title {
+  position: relative;
+  ul {
+    display: flex;
+
+    li {
+      position: relative;
+      float: none;
+      display: inline-block;
+      margin: 0 12px;
+      padding: 10px 0px 15px;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      font-weight: 600;
+
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 20px;
+        right: -14px;
+        height: 4px;
+        width: 4px;
+        background-color: #222;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        color: var(--primary);
+      }
+
+      a {
+        position: relative;
+        padding: 10px 0 15px;
+        &::before {
+          content: " ";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          opacity: 0;
+          transform-origin: left center;
+          -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+          -webkit-transform-origin: left center;
+          transform-origin: left center;
+          border-bottom: 2px solid #5c5c5c;
+          -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+          transition: opacity 0.3s, -webkit-transform 0.3s;
+          transition: transform 0.3s, opacity 0.3s;
+          transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+        }
+
+        &:hover::before {
+          opacity: 1;
+          -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+        }
+        &.active {
+          color: var(--primary);
+          &::before {
+            opacity: 1;
+            transform: scale(1, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.choose {
+  display: flex;
+}
+
+.page_node {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+  justify-content: center;
+  a {
+    padding: 0 6px;
+    margin: 0 5px;
+    opacity: 0.4;
+    color: #333;
+    font-size: 1.6rem;
+    .current {
+      opacity: 1;
+      color: var(--black);
+    }
+  }
+}
+
+@media (min-width: 740px) {
+  .title ul {
+    display: block;
+  }
+}
+
+@media (max-width: 740px) {
+  .wrapper {
+    float: none;
+  }
+
+  .title ul {
+    display: block;
+  }
+}

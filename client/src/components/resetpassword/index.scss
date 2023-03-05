@@ -1,0 +1,134 @@
+.reset-password {
+	margin-bottom: 20px;
+	font-size: 2rem;
+	color: var(--text-title);
+}
+
+.action-account {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+  .btn-submit {
+    .MuiButtonBase-root {
+      width: 95px;
+      height: 42px;
+      font-size: 13px;
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .Mui-disabled {
+      color: rgba(0, 0, 0, 0.26);
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+.MuiInputLabel-root {
+  font-size: 14px !important;
+}
+
+.mess-reset-password {
+  margin-top: 10px;
+  color: var(--primary);
+}
+
+.input-recover {
+	margin-bottom: 10px;
+}
+
+.req_pass {
+	font-size: 1.5rem;
+	&:hover {
+		cursor: pointer;
+		color: var(--primary);
+	}
+}
+
+input[type="name"],
+input[type="password"],
+input[type="email"] {
+  display: block;
+  width: 100%;
+  height: 55px;
+  border: 1px solid transparent;
+  background: #ededed;
+  color: var(--black);
+  padding: 0 20px;
+  font-weight: 500;
+  font-size: 14px;
+  -webkit-appearance: none;
+}
+
+.verification-code {
+  margin-top: 20px;
+
+  &-input {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0;
+
+    input {
+      height: 40px;
+      display: block;
+      border: 1px solid transparent;
+      background: #ededed;
+      outline: none;
+      padding-left: 8px;
+    }
+  }
+
+  &-btn {
+    border: none;
+    padding: 2px 8px;
+    float: right;
+  }
+}
+
+
+.valid-wrapper {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.invalid-password {
+  color: #D0021B;
+  &:before {
+    position: relative;
+    left: -10px;
+    content: "✖";
+  }
+}
+
+.valid-password {
+  color: green;
+  &::before {
+    position: relative;
+    left: -10px;
+    content: "✔";
+  }
+}
+
+.return-login {
+  margin-top: 35px;
+  display: block;
+  font-weight: 500;
+
+  span {
+    margin-left: 20px;
+  }
+
+  a:hover {
+    color: var(--primary);
+  }
+}
+
+.MuiFormLabel-root {
+  font-size: 14px;
+}

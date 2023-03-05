@@ -1,0 +1,37 @@
+.react-viewer-navbar,
+.react-viewer-attribute,
+.react-viewer-btn[data-key="rotateLeft"],
+.react-viewer-btn[data-key="rotateRight"],
+.react-viewer-btn[data-key="reset"],
+.react-viewer-btn[data-key="scaleX"],
+.react-viewer-btn[data-key="scaleY"] {
+  display: none;
+}
+
+.react-viewer-close {
+  width: 45px;
+  height: 45px;
+}
+.react-viewer-close > i {
+  top: 10px;
+  left: 20px;
+}
+
+.react-viewer-toolbar li {
+  width: 0px;
+  height: 0px;
+  margin: 0px 30px;
+  line-height: 0px;
+
+  .react-viewer-icon {
+    padding: 15px;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+  }
+}
+
+.react-viewer-toolbar {
+  height: 50px;
+  margin-bottom: 50px !important;
+}

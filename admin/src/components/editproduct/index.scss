@@ -1,0 +1,66 @@
+.form-edit {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 20px;
+
+	.MuiFormControl-root {
+		width: 400px !important;
+	}
+}
+
+.update-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.color {
+	display: flex;
+	gap: 10px;
+	margin: 5px;
+	cursor: pointer;
+
+	&-label {
+		font-size: 13px;
+		margin-bottom: 4px;
+		color: rgba(0, 0, 0, 0.6);
+	}
+
+	&-item {
+		padding: 0px 10px;
+		border: 1px solid #111;
+	}
+}
+.gallery {
+	margin: 5px;
+
+	&-label {
+		font-size: 13px;
+		color: rgba(0, 0, 0, 0.6);
+	}
+
+	&-preview {
+		display: flex;
+		gap: 10px;
+		margin-bottom: 4px;
+
+    .image {
+      position: relative;
+
+      img {
+        width: 80px;
+      }
+    }
+
+    .close-img {
+      content: "";
+      position: absolute;
+      top: -12px;
+      right: -11px;
+      color: gray;
+      font-size: 13px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+	}
+}

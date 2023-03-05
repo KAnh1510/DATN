@@ -1,0 +1,22 @@
+.change-password {
+  width: 60%;
+  font-size: 14px;
+
+  .new-password {
+    width: 80%;
+    display: flex;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  .action-account {
+    width: 80%;
+  }
+
+  .req_pass {
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
