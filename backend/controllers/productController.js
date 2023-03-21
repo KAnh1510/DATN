@@ -28,6 +28,26 @@ const productController = {
 		}
 	},
 
+	updateQuantityProduct: (req, res) => {
+		try {
+			const products = req.body;
+			products.map(async (prd) => {
+				const product = await Product.findById({ _id: prd.productId });
+				const newQuantity = product.quality - prd.quantity;
+				await Product.updateOne(
+					{ _id: prd.productId },
+					{
+						$set: { quality: newQuantity },
+					}
+				);
+			});
+			res.status(200).json("Successfully");
+		} catch (error) {
+			console.log(error);
+			res.status(500).json(error);
+		}
+	},
+
 	//GET ALL PRODUCTS
 	getAllProducts: async (req, res) => {
 		try {

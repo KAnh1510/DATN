@@ -101,7 +101,7 @@ const SingleFeedback = () => {
 							)}
 						</div>
 						<div className="detailItem content">
-							<span className="itemKey">Content: </span>
+							<span className="itemKey">Feedback: </span>
 							{isFetching ? (
 								<Skeleton
 									variant="text"

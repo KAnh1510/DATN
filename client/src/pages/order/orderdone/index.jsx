@@ -1,7 +1,6 @@
 import classnames from "classnames/bind";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
 import { useEffect, useState } from "react";
 import { getOrder, updateOrder } from "~/api/ordersApi";
 import styles from "./OrderDone.module.scss";
@@ -20,7 +19,7 @@ const OrderDone = () => {
 		const orderUpdate = orders.filter((item) => item._id === id);
 		const { _id, ...newObj } = orderUpdate[0];
 		await updateOrder(dispatch, id, { ...newObj, status: 3 });
-		getOrder(dispatch, _id, { status: 0 });
+		getOrder(dispatch, currentUser._id, { status: 0 });
 	};
 
 	const handleChange = (event) => {
@@ -55,7 +54,7 @@ const OrderDone = () => {
 					return (
 						<OrderItem
 							order={order}
-							username={name}
+							name={name}
 							email={email}
 							handelCancelOrder={handelCancelOrder}
 							key={order._id}

@@ -12,7 +12,7 @@ import Images from "~/components/images";
 import { guest } from "~/createInstance";
 import HeaderPage from "~/layout/components/HeaderPage";
 import { Logout } from "~/pages/auth";
-import { getAmountProduct, increaseQtn } from "~/slice/CartSlice";
+import { increaseQtn } from "~/slice/CartSlice";
 import styles from "./Payment.module.scss";
 import PaymentInMobile from "./PaymentInMobile";
 import ProductAmount from "./ProductAmount";
@@ -53,17 +53,11 @@ const ShipmentDetail = () => {
 			.post("/stripe/create-checkout-session", {
 				cartItems: productInCart,
 				userId: userId,
+				cartId: carts?._id,
 			})
 			.then(async (response) => {
 				if (response.data.url) {
 					window.location.href = response.data.url;
-					console.log(response.data.url);
-					if (
-						response.data.url ===
-						"http://localhost:3000/checkout-success"
-					) {
-						await deleteCart(dispatch, carts?._id);
-					}
 				}
 			})
 			.catch((err) => console.log(err.message));

@@ -67,9 +67,9 @@ const orderController = {
 	},
 
 	getTotalOrders: async (req, res) => {
-		const orders = await Order.find();
-		res.status(200).json({ totalOrder: orders.length });
 		try {
+			const orders = await Order.find();
+			res.status(200).json({ totalOrder: orders.length });
 		} catch (error) {
 			return res.status(500).json(error);
 		}

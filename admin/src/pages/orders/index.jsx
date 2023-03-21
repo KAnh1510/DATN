@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { changeStatusOrder, getAllOrder } from "../../api/orderApi";
 import { CustomPagination, StyledDataGrid } from "../../components";
+import { user } from "../../createInstance";
 import Layout from "../../layouts";
 import { formatDateTime, VndFormat } from "../../utils";
 import "./index.scss";
@@ -39,6 +40,8 @@ const Orders = () => {
 		const order = allOrder.find((item) => item._id === id);
 		const { _id: _, ...newObj } = order;
 		changeStatusOrder(dispatch, id, { newObj, status: 4 });
+		const res = user.post("/products/update-quantity", order.products);
+		console.log(res);
 	};
 
 	const handleChange = (event) => {

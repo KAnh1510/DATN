@@ -20,6 +20,7 @@ router.post("/create", productController.createProduct);
 
 //UPDATE
 router.post("/update/:id", productController.updatedProduct);
+router.post("/update-quantity", productController.updateQuantityProduct);
 
 //DELETE
 router.delete("/remove/:id", productController.deleteProduct);

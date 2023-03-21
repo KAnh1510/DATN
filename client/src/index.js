@@ -1,11 +1,10 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import GlobalStyles from "./components/globalstyles";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import "./i18n.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

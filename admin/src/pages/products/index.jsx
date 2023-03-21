@@ -67,6 +67,8 @@ const Products = () => {
 					<div>
 						{isFetching ? (
 							<Skeleton variant="text" width={80} height={14} />
+						) : params.row.quality === 0 ? (
+							<span>Sold out</span>
 						) : (
 							params.row.quality
 						)}

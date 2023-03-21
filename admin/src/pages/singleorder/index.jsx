@@ -1,7 +1,7 @@
 import { Skeleton } from "@mui/material";
 import { React, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getSingleOrder } from "../../api/orderApi";
 import { Navbar, SideBar } from "../../components";
 import { VndFormat } from "../../utils";
@@ -10,6 +10,7 @@ import "./index.scss";
 const SingleOrder = () => {
 	const dispatch = useDispatch();
 	const params = useParams();
+	const navigate = useNavigate();
 	const { currentOrder, isFetching } = useSelector((state) => state.orders);
 	const productInOrder = currentOrder.products;
 
@@ -141,7 +142,16 @@ const SingleOrder = () => {
 												</span>
 											</div>
 											<div style={{ width: "100%" }}>
-												<div>{item.name}</div>
+												<div
+													onClick={() =>
+														navigate(
+															`/products/${item.productId}`
+														)
+													}
+													className="product-name"
+												>
+													{item.name}
+												</div>
 												<div className="df">
 													<span>Size: </span>
 													<span>{item.size}</span>

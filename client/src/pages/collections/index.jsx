@@ -11,7 +11,7 @@ import styles from "./Collection.module.scss";
 
 const cx = classnames.bind(styles);
 function Categories() {
-	const pageSize = 3;
+	const pageSize = 8;
 	const dispatch = useDispatch();
 	const params = useParams();
 	const [pageNumber, setPageNumber] = useState(1);

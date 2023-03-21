@@ -63,7 +63,7 @@ const Notify = () => {
 									<div
 										key={item._id}
 										onClick={() => {
-											item.status &&
+											!item.status &&
 												handleFeedback(item._id);
 										}}
 										className={

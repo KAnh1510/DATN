@@ -60,7 +60,10 @@ const OrderItem = ({ order, name, email, handelCancelOrder }) => {
 					{status === 1 && (
 						<span
 							style={{
-								color: "var(--primary)",
+								padding: "6px 8px",
+								borderRadius: "4px",
+								color: "goldenrod",
+								backgroundColor: "rgba(189, 189, 3, 0.103)",
 							}}
 						>
 							Pending...
@@ -69,7 +72,10 @@ const OrderItem = ({ order, name, email, handelCancelOrder }) => {
 					{status === 2 && (
 						<span
 							style={{
-								color: "green",
+								padding: "6px 8px",
+								borderRadius: "4px",
+								color: "#00e1ff",
+								backgroundColor: "rgba(0, 225, 255, 0.151)",
 							}}
 						>
 							Delivering...
@@ -78,13 +84,27 @@ const OrderItem = ({ order, name, email, handelCancelOrder }) => {
 					{status === 3 && (
 						<span
 							style={{
-								color: "#dc3545",
+								padding: "6px 8px",
+								borderRadius: "4px",
+								color: "#D0021B",
+								backgroundColor: "rgba(238, 56, 56, 0.122)",
 							}}
 						>
 							Cancel
 						</span>
 					)}
-					{status === 0 && <span>Success</span>}
+					{status === 4 && (
+						<span
+							style={{
+								padding: "6px 8px",
+								borderRadius: "4px",
+								color: "#008000",
+								backgroundColor: "rgba(0, 128, 0, 0.122)",
+							}}
+						>
+							Completed
+						</span>
+					)}
 				</div>
 
 				{status === 1 && (

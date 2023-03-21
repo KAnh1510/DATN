@@ -1,66 +1,69 @@
 .single-order {
+	.details_left-order {
+		min-width: 500px;
 
-  .details_left-order {
+		.order_product-info {
+			display: flex;
+			gap: 20px;
+			margin-bottom: 20px;
 
-    min-width: 500px;
+			.img_quantity {
+				position: relative;
+			}
 
-    .order_product-info {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
+			.quantity {
+				position: absolute;
+				top: -5px;
+				right: -5px;
+				padding: 0px 5px;
+				background-color: gray;
+				border-radius: 50%;
+				color: #fff;
+				font-size: 13px;
+			}
 
-      .img_quantity {
-        position: relative;
-      }
+			img {
+				width: 110px;
+				border: 1px solid #e0e0e0;
+			}
+		}
 
-      .quantity {
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        padding: 0px 5px;
-        background-color: gray;
-        border-radius: 50%;
-        color: #fff;
-        font-size: 13px;
-      }
+		.color {
+			padding: 10px;
+			border: 1px solid #111;
+			width: 20px;
+			margin: 0;
+		}
 
-      img {
-        width: 110px;
-        border: 1px solid #e0e0e0;
-      }
-    }
+		.df {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 10px;
 
-    .color {
-      padding: 10px;
-      border: 1px solid #111;
-      width: 20px;
-      margin: 0;
-    }
+			> span {
+				font-size: 14px;
+				font-weight: bold;
+				color: gray;
+			}
+		}
 
-    .df {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 10px;
+		.product-name:hover {
+			cursor: pointer;
+			opacity: 0.8;
+		}
 
-      >span {
-        font-size: 14px;
-        font-weight: bold;
-        color: gray;
-      }
-    }
+		.amount {
+			margin-top: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 
-    .amount {
-      margin-top: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      >span {
-        font-weight: 600;
-        font-size: 18px;
-        color: gray;
-      }
-    }
-  }
+			> span {
+				font-weight: 600;
+				font-size: 18px;
+				color: gray;
+			}
+		}
+	}
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteCart } from "~/api/cartApi";
@@ -10,9 +11,9 @@ const CheckoutSuccess = () => {
 	const currentUser = useSelector((state) => state.users.currentUser);
 	const carts = useSelector((state) => state.cart.carts);
 
-	const handleDelete = async () => {
+	useEffect(() => {
 		deleteCart(dispatch, carts._id);
-	};
+	}, []);
 
 	return (
 		<div className="checkout-success">
@@ -24,14 +25,8 @@ const CheckoutSuccess = () => {
 			<div className="subtitle-success">Thank for your purchase!</div>
 
 			<div className="checkout-success-navigate">
-				<Link to="/collection/all" onClick={handleDelete}>
-					{" "}
-					Continue shopping
-				</Link>
-				<Link to={`/orders/${currentUser._id}`} onClick={handleDelete}>
-					{" "}
-					View orders
-				</Link>
+				<Link to="/collection/all">Continue shopping</Link>
+				<Link to={`/orders/${currentUser._id}`}>View orders</Link>
 			</div>
 		</div>
 	);

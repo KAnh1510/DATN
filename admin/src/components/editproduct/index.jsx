@@ -44,7 +44,7 @@ const EditProduct = ({ setCloseEdit }) => {
 		gallery: currentProduct.gallery,
 	});
 	const [colorUpdate, setColorUpdate] = useState(currentProduct.color);
-	const [sketchColor, setSketchColor] = useState("#0000FF");
+	const [sketchColor, setSketchColor] = useState(currentProduct.color[0]);
 	const [itemActive, setItemActive] = useState("");
 	const newSize = [];
 	currentProduct.size.map((item) => newSize.push(item.name));
@@ -71,7 +71,7 @@ const EditProduct = ({ setCloseEdit }) => {
 
 		sizeUpdate.map((item) => newSize.push({ name: item }));
 		gallery.fileList.forEach((item) => {
-			newGallery.push({ src: URL.createObjectURL(item.originFileObj) });
+			newGallery.push({ src: item.thumbUrl });
 		});
 
 		if (newGallery.length !== 0) {
@@ -88,6 +88,7 @@ const EditProduct = ({ setCloseEdit }) => {
 				size: newSize,
 			});
 		}
+
 		updateProduct(dispatch, currentProduct?._id, productUpdate);
 		setOpenSnackbar(true);
 	};

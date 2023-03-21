@@ -1,6 +1,7 @@
 const express = require("express");
 const Stripe = require("stripe");
 const Order = require("../models/Order");
+const Cart = require("../models/Cart");
 
 require("dotenv").config();
 const stripe = Stripe(process.env.STRIPE_KEY);
@@ -14,6 +15,7 @@ router.post("/create-checkout-session", async (req, res) => {
 			userId: req.body.userId,
 			cart: JSON.stringify(req.body.cartItems.toString()),
 			note: req.body.note,
+			cartId: req.body.cartId,
 		},
 	});
 
@@ -164,8 +166,6 @@ router.post(
 			stripe.customers
 				.retrieve(data.customer)
 				.then(async (customer) => {
-					console.log(customer);
-					console.log("data: ", data);
 					try {
 						const order = createOrder(customer, data);
 						res.status(200).json(order);
