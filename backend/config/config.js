@@ -13,5 +13,6 @@ exports.frontendHost = (process.env.FRONTEND_HOST &&
 	"http://localhost:3000",
 	"http://localhost:3001",
 	"https://adminweb-kanh1510.vercel.app",
+	"https://client-kanh1510.vercel.app",
 	"https://clientweb-kanh1510.vercel.app",
 ];

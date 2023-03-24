@@ -54,7 +54,6 @@ export const UserSlice = createSlice({
 			state.msg = "";
 		},
 		resetState: (state) => {
-			state.currentUser = [];
 			state.error = false;
 			state.isFetching = false;
 			state.msg = "";
