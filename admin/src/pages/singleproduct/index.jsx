@@ -54,7 +54,13 @@ const SingleProduct = () => {
 								<div className="detailItem">
 									<span className="itemKey">Quality: </span>
 									<span className="itemValue">
-										{currentProduct.quality}
+										{currentProduct.quality === 0 ? (
+											<span style={{ color: "red" }}>
+												Sold out
+											</span>
+										) : (
+											currentProduct.quality
+										)}
 									</span>
 								</div>
 								<div className="detailItem">

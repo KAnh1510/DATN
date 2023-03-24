@@ -29,7 +29,7 @@ const orderController = {
 	getAllOrders: async (req, res) => {
 		try {
 			const orders = await Order.find();
-			res.status(200).json(orders);
+			res.status(200).json(sortByDate(orders));
 		} catch (err) {
 			res.status(500).json(err);
 		}
@@ -48,8 +48,8 @@ const orderController = {
 	//GET ORDER BY ID
 	getOrderById: async (req, res) => {
 		try {
-			const orders = await Order.findById(req.params.id);
-			res.status(200).json(orders);
+			const order = await Order.findById(req.params.id);
+			res.status(200).json(order);
 		} catch (err) {
 			console.log(err);
 			res.status(500).json(err);
@@ -60,7 +60,7 @@ const orderController = {
 	getOrder: async (req, res) => {
 		try {
 			const orders = await Order.find({ userId: req.params.userId });
-			res.status(200).json(orders);
+			res.status(200).json(sortByDate(orders));
 		} catch (err) {
 			res.status(500).json(err);
 		}
@@ -97,7 +97,7 @@ const orderController = {
 				}
 			});
 
-			return res.status(200).json(list);
+			return res.status(200).json(sortByDate(list));
 		} catch (error) {
 			console.log(error);
 			return res.status(500).json(error);
@@ -126,18 +126,16 @@ const orderController = {
 
 	//GET MONTHLY INCOME
 	getMonthlyIncome: async (req, res) => {
-		const date = new Date();
-		const lastMonth = new Date(date.setMonth(date.getMonth()));
-		const preMonth = new Date(
-			new Date().setMonth(lastMonth.getMonth() - 1)
-		);
+		const tempOrder = await Order.find();
+		const orders = sortByDate(tempOrder);
+		const lastMonth = orders[orders.length - 1].createdAt;
 
 		try {
 			const income = await Order.aggregate([
 				{
 					$match: {
-						createdAt: { $gte: preMonth },
-						status: 1,
+						createdAt: { $gte: lastMonth },
+						status: 4,
 					},
 				},
 				{

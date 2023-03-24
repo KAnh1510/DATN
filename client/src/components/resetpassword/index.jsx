@@ -93,6 +93,8 @@ const ResetPassword = ({ setForgotPassword }) => {
 				if (res.status === 200) {
 					setMsgCodeWrong(res.data);
 					setIsVerificationCode(false);
+					setPassword("");
+					setEmail("");
 				}
 			})
 			.catch((error) => {
@@ -185,7 +187,12 @@ const ResetPassword = ({ setForgotPassword }) => {
 				) : (
 					<></>
 				)}
-				<div style={{ color: "gray", marginBottom: 8 }}>
+				<div
+					style={{
+						color: isVerificationCode ? "#002079" : "gray",
+						marginBottom: 8,
+					}}
+				>
 					{msgCodeWrong}
 				</div>
 				<Captcha />
@@ -219,7 +226,6 @@ const ResetPassword = ({ setForgotPassword }) => {
 							Verification code has been emailed, please check it!
 						</div>
 						<div className="verification-code-input">
-							<div>Verification Code: </div>
 							<input
 								type="text"
 								maxLength={6}

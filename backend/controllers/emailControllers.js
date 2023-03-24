@@ -35,14 +35,12 @@ function makeid(length) {
 
 const sendMail = async (req, res) => {
 	try {
-		var email = req.body.email;
-		var currentPassword = req.body.currentPassword;
+		let email = req.body.email;
+		let currentPassword = req.body.currentPassword;
 		const user = await User.findOne({ email: req.body.email });
 		if (!user) {
 			return res.status(401).json("Email not registered!");
 		}
-		console.log("user.password:", user.password);
-		console.log("currentPassword: ", currentPassword);
 		if (currentPassword) {
 			const validPassword = bcrypt.compare(
 				currentPassword,
@@ -52,9 +50,9 @@ const sendMail = async (req, res) => {
 				return res.status(401).json("Current password is incorrect!");
 			}
 		}
-		var passwordRandom = makeid(6);
+		let passwordRandom = makeid(6);
 		verificationCode = passwordRandom;
-		var message = `
+		let message = `
       <div>
         <h2>Reset password </h2>
         <div>Your verification code is: ${passwordRandom}. Please do not send this verification code to anyone.</div>

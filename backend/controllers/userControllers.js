@@ -34,7 +34,13 @@ const userController = {
 	//DELETE
 	deleteUser: async (req, res) => {
 		try {
-			await User.findByIdAndDelete(req.params.id);
+			await User.findByIdAndUpdate(
+				req.params.id,
+				{
+					$set: { deleted: true },
+				},
+				{ new: true }
+			);
 			res.status(200).json("User has been deleted...");
 		} catch (error) {
 			res.status(500).json(error);
@@ -92,6 +98,24 @@ const userController = {
 			});
 
 			return res.status(200).json(customers);
+		} catch (error) {
+			console.log(error);
+			return res.status(500).json(error);
+		}
+	},
+
+	getUserDeleted: async (req, res) => {
+		try {
+			const users = await User.find();
+			const user = [];
+
+			users.forEach((item) => {
+				if (item.deleted) {
+					user.push(item);
+				}
+			});
+
+			return res.status(200).json(user);
 		} catch (error) {
 			console.log(error);
 			return res.status(500).json(error);

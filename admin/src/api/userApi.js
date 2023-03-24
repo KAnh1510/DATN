@@ -30,6 +30,8 @@ export const getAllUser = async (dispatch, filterOption) => {
 			res = await user.get("/users/get-admin");
 		} else if (filterOption === "2") {
 			res = await user.get("/users/get-customer");
+		} else if (filterOption === "3") {
+			res = await user.get("/users/get-user-deleted");
 		}
 		dispatch(getAllUsersSuccess(res.data));
 	} catch (error) {

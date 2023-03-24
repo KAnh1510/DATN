@@ -14,10 +14,11 @@ userRouters.put("/edit-profile/:id", userController.updateUser);
 
 userRouters.use(authMiddleware.verifyTokenAndAdmin);
 userRouters.get("/list", userController.getAllUsers);
-userRouters.delete("/:id", userController.deleteUser);
+userRouters.post("/delete/:id", userController.deleteUser);
 userRouters.get("/total-users", userController.getTotalUsers);
 userRouters.get("/get-admin", userController.getUserAdmin);
 userRouters.get("/get-customer", userController.getUserCustomer);
+userRouters.get("/get-user-deleted", userController.getUserDeleted);
 
 userRouters.use(notFound);
 

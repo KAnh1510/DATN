@@ -71,6 +71,7 @@ const NewProduct = () => {
 							style={{ width: "200px", margin: "5px" }}
 							type="text"
 							label="Product name"
+							required
 							value={newProduct.name}
 							onChange={(e) => {
 								setNewProduct({
@@ -84,6 +85,7 @@ const NewProduct = () => {
 						<TextField
 							style={{ width: "200px", margin: "5px" }}
 							type="text"
+							required
 							value={newProduct.subtle}
 							label="Subtle"
 							onChange={(e) => {
@@ -98,6 +100,7 @@ const NewProduct = () => {
 						<TextField
 							style={{ width: "200px", margin: "5px" }}
 							type="number"
+							required
 							value={newProduct.quality}
 							label="Quality"
 							onChange={(e) => {
@@ -146,6 +149,7 @@ const NewProduct = () => {
 							type="number"
 							value={newProduct.prices}
 							label="Prices"
+							required
 							onChange={(event) => {
 								setNewProduct({
 									...newProduct,

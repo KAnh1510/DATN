@@ -16,9 +16,6 @@ ordersRouter.put("/update/:id", orderController.updatedOrder);
 //GET ORDER BY ID
 ordersRouter.get("/get-by-id/:id", orderController.getOrderById);
 
-//GET MONTHLY INCOME
-ordersRouter.get("/income", orderController.getMonthlyIncome);
-
 //DELETE
 ordersRouter.delete("/remove/:id", orderController.deleteOrder);
 

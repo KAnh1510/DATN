@@ -78,7 +78,13 @@ const productController = {
 	//DELETE
 	deleteProduct: async (req, res) => {
 		try {
-			await Product.findByIdAndDelete(req.params.id);
+			await Product.findByIdAndUpdate(
+				req.params.id,
+				{
+					$set: { deleted: true },
+				},
+				{ new: true }
+			);
 			res.status(200).json("Product has been deleted...");
 		} catch (error) {
 			res.status(500).json(error);

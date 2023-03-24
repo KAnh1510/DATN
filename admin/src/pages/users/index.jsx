@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getAllUser } from "../../api/userApi";
 import images from "../../assets/images/";
 import { CustomPagination, StyledDataGrid } from "../../components";
+import { user } from "../../createInstance";
 import Layout from "../../layouts";
 
 const Customers = () => {
@@ -18,7 +19,11 @@ const Customers = () => {
 		navigate(`${id}`);
 	};
 
-	const handleDelete = () => {};
+	const handleDelete = async (id) => {
+		await user.post(`/users/delete/${id}`).then(() => {
+			getAllUser(dispatch, "0");
+		});
+	};
 
 	const handleChange = (event) => {
 		setFilterOption(event.target.value);
@@ -121,25 +126,46 @@ const Customers = () => {
 			headerName: "Action",
 			width: 150,
 			renderCell: (params) => {
-				return isFetching ? (
-					<Skeleton variant="text" width={130} height={14} />
-				) : (
-					<div className="cellAction">
-						<div onClick={() => handleView(params.row._id)}>
-							<div className="viewButton">View</div>
+				if (isFetching) {
+					return <Skeleton variant="text" width={130} height={14} />;
+				}
+				if (params.row.deleted) {
+					return (
+						<div
+							className="deleteButton"
+							style={{
+								backgroundColor: "gray",
+								padding: 4,
+								borderRadius: 4,
+							}}
+						>
+							Delete
 						</div>
-						{params.row.isAdmin ? (
-							<></>
-						) : (
+					);
+				}
+				if (params.row.isAdmin) {
+					return (
+						<div className="cellAction">
+							<div onClick={() => handleView(params.row._id)}>
+								<div className="viewButton">View</div>
+							</div>
+						</div>
+					);
+				} else {
+					return (
+						<div className="cellAction">
+							<div onClick={() => handleView(params.row._id)}>
+								<div className="viewButton">View</div>
+							</div>
 							<div
 								className="deleteButton"
 								onClick={() => handleDelete(params.row._id)}
 							>
 								Delete
 							</div>
-						)}
-					</div>
-				);
+						</div>
+					);
+				}
 			},
 		},
 	];
@@ -165,6 +191,7 @@ const Customers = () => {
 							<option value="0">All</option>
 							<option value="1">Admin</option>
 							<option value="2">Customers</option>
+							<option value="3">Deleted</option>
 						</select>
 					</div>
 				</div>

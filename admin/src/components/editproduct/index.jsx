@@ -88,7 +88,6 @@ const EditProduct = ({ setCloseEdit }) => {
 				size: newSize,
 			});
 		}
-
 		updateProduct(dispatch, currentProduct?._id, productUpdate);
 		setOpenSnackbar(true);
 	};
@@ -249,12 +248,18 @@ const EditProduct = ({ setCloseEdit }) => {
 					<UploadImages gallery={gallery} setGallery={setGallery} />
 				</div>
 			</form>
-			<Toastify
-				openSnackbar={openSnackbar}
-				onClose={() => setOpenSnackbar(false)}
-				error={!updateSuccess}
-				title="Update Product"
-			/>
+
+			{!isFetching ? (
+				<Toastify
+					openSnackbar={openSnackbar}
+					onClose={() => setOpenSnackbar(false)}
+					error={!updateSuccess}
+					title="Update Product"
+				/>
+			) : (
+				<></>
+			)}
+
 			<ButtonLoading
 				handleOnclick={handleUpdateProduct}
 				isFetching={isFetching}

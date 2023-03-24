@@ -271,8 +271,8 @@ const Orders = () => {
 					className="datagrid"
 					rows={allOrder ?? []}
 					columns={orderColumns}
-					pageSize={9}
-					rowsPerPageOptions={[9]}
+					pageSize={14}
+					rowsPerPageOptions={[14]}
 					components={{
 						Pagination: CustomPagination,
 					}}

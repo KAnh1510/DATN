@@ -33,6 +33,10 @@ const userSchema = new mongoose.Schema(
 			type: String,
 		},
 		name: { type: String },
+		deleted: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	{ timestamps: true }
 );

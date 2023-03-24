@@ -27,6 +27,7 @@ const Products = () => {
 
 	const handleDelete = (productId) => {
 		deleteProduct(dispatch, productId);
+		getAllProducts(dispatch, "all");
 	};
 
 	const handleChange = (event) => {
@@ -68,7 +69,7 @@ const Products = () => {
 						{isFetching ? (
 							<Skeleton variant="text" width={80} height={14} />
 						) : params.row.quality === 0 ? (
-							<span>Sold out</span>
+							<span style={{ color: "red" }}>Sold out</span>
 						) : (
 							params.row.quality
 						)}
@@ -113,19 +114,17 @@ const Products = () => {
 			headerName: "Image",
 			width: 180,
 			renderCell: (params) => {
-				return (
+				return isFetching ? (
+					<Skeleton variant="text" width={180} height={14} />
+				) : (
 					<div className="img-product">
-						{isFetching ? (
-							<Skeleton variant="text" width={180} height={14} />
-						) : (
-							<img
-								src={
-									params.row.gallery[0]?.src ??
-									images.noImageProduct
-								}
-								alt=""
-							/>
-						)}
+						<img
+							src={
+								params.row.gallery[0]?.src ??
+								images.noImageProduct
+							}
+							alt=""
+						/>
 					</div>
 				);
 			},
@@ -135,15 +134,27 @@ const Products = () => {
 			headerName: "Action",
 			width: 150,
 			renderCell: (params) => {
-				return isFetching ? (
-					<Skeleton variant="text" width={130} height={14} />
-				) : (
-					<div className="cellAction">
+				if (isFetching) {
+					return <Skeleton variant="text" width={130} height={14} />;
+				}
+				if (params.row.deleted) {
+					return (
 						<div
-							className="viewButton"
-							onClick={() => handleView(params.row._id)}
+							className="deleteButton"
+							style={{
+								backgroundColor: "gray",
+								padding: 4,
+								borderRadius: 4,
+							}}
 						>
-							View
+							Delete
+						</div>
+					);
+				}
+				return (
+					<div className="cellAction">
+						<div onClick={() => handleView(params.row._id)}>
+							<div className="viewButton">View</div>
 						</div>
 						<div
 							className="deleteButton"
