@@ -15,6 +15,7 @@ import Payment from "./pages/order/payment";
 import CheckoutSuccess from "./pages/order/payment/checkoutsuccess";
 import Products from "./pages/products";
 import Recruitment from "./pages/recruitment";
+import ResetPassword from "./components/resetpassword";
 
 function App() {
 	return (
@@ -74,6 +75,14 @@ function App() {
 						element={
 							<DefaultLayout>
 								<Login />
+							</DefaultLayout>
+						}
+					/>
+					<Route
+						path="/reset-password"
+						element={
+							<DefaultLayout>
+								<ResetPassword />
 							</DefaultLayout>
 						}
 					/>

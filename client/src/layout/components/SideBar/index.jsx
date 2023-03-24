@@ -2,7 +2,7 @@ import classnames from "classnames/bind";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { getCart } from "~/api/cartApi";
 import Images from "~/components/images";
 import { guest } from "~/createInstance";
@@ -67,10 +67,10 @@ function SideBar() {
 						<div className={cx("login")}>
 							<div
 								onClick={() => setConfirmLogout(true)}
-								title={t("logout")}
+								title={t("log out")}
 								className={cx("login-item")}
 							>
-								{t("logout")}
+								{t("log out")}
 							</div>
 							<NavLink
 								to={`/account/${currentUser?._id}`}

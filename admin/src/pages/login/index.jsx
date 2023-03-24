@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../api/authApi";
 import { guest } from "../../createInstance";
+import { resetState } from "../../slice/AuthSlice";
 import "./index.scss";
 
 const Login = () => {
@@ -45,6 +46,10 @@ const Login = () => {
 				}
 			})
 			.catch((err) => {});
+
+		return () => {
+			dispatch(resetState());
+		};
 	}, []);
 
 	return (

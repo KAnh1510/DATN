@@ -53,6 +53,12 @@ export const AuthSlice = createSlice({
 			state.error = false;
 			state.msg = "";
 		},
+
+		resetState: (state) => {
+			state.error = false;
+			state.isFetching = false;
+			state.msg = "";
+		},
 	},
 });
 
@@ -66,6 +72,7 @@ export const {
 	loginFailed,
 	loginStart,
 	loginSuccess,
+	resetState,
 } = AuthSlice.actions;
 
 export default AuthSlice.reducer;
