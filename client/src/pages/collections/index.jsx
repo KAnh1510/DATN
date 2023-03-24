@@ -55,9 +55,7 @@ function Categories() {
 										key={product._id}
 										className={cx("product")}
 									>
-										{product.deleted ? (
-											<ShowListProduct item={product} />
-										) : null}
+										<ShowListProduct item={product} />
 									</div>
 								);
 							})}

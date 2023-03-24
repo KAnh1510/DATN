@@ -18,20 +18,9 @@ function ShowListProduct({ item }) {
 		});
 	};
 
-	return (
+	return item?.deleted ? null : (
 		<>
-			{item.quality === 0 ? (
-				<div className={cx("prd_img")}>
-					<Images
-						src={item.gallery[0]?.src ?? images.noImage}
-						alt={item.name}
-						className={cx("product-sold-out")}
-					/>
-					<div className={cx("sold-out")}>
-						<span>SOLD OUT</span>
-					</div>
-				</div>
-			) : (
+			{item?.quality !== 0 ? (
 				<div className={cx("prd_img")} onClick={handleClick}>
 					<Images
 						src={item.gallery[0]?.src ?? images.noImage}
@@ -43,6 +32,17 @@ function ShowListProduct({ item }) {
 						alt={item.name}
 						className={cx("img_hidden")}
 					/>
+				</div>
+			) : (
+				<div className={cx("prd_img")}>
+					<Images
+						src={item.gallery[0]?.src ?? images.noImage}
+						alt={item.name}
+						className={cx("product-sold-out")}
+					/>
+					<div className={cx("sold-out")}>
+						<span>SOLD OUT</span>
+					</div>
 				</div>
 			)}
 
