@@ -1,6 +1,7 @@
 import { guest } from "~/createInstance";
 import {
 	createOrderSuccess,
+	getOrderFailed,
 	getOrderStart,
 	getOrderSuccess,
 	updateOrderFailed,
@@ -24,6 +25,7 @@ export const getOrder = async (dispatch, userId, status) => {
 		dispatch(getOrderSuccess(res.data));
 	} catch (error) {
 		console.log(error);
+		dispatch(getOrderFailed());
 	}
 };
 

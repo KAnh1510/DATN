@@ -14,9 +14,15 @@ export const OrderSlice = createSlice({
 			state.isFetching = false;
 			state.error = false;
 		},
-		getOrderStart: (state) => {},
+		getOrderStart: (state) => {
+			state.isFetching = true;
+		},
 		getOrderSuccess: (state, action) => {
 			state.orders = action.payload;
+			state.isFetching = false;
+		},
+		getOrderFailed: (state) => {
+			state.isFetching = false;
 		},
 		updateOrderStart: (state) => {
 			state.isFetching = true;
@@ -35,6 +41,7 @@ export const {
 	createOrderSuccess,
 	getOrderStart,
 	getOrderSuccess,
+	getOrderFailed,
 	updateOrderStart,
 	updateOrderSuccess,
 	updateOrderFailed,

@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { getOrder, updateOrder } from "~/api/ordersApi";
 import styles from "./OrderDone.module.scss";
 import OrderItem from "./OrderItem";
+import { CircularProgress } from "@mui/material";
+import { Stack } from "@mui/system";
 const cx = classnames.bind(styles);
 
 const OrderDone = () => {
@@ -12,7 +14,7 @@ const OrderDone = () => {
 	const currentUser = useSelector((state) => state.users.currentUser);
 
 	const { _id, name, email } = currentUser;
-	const orders = useSelector((state) => state.orders.orders);
+	const { orders, isFetching } = useSelector((state) => state.orders);
 	const [filterOption, setFilterOption] = useState(0);
 
 	const handelCancelOrder = async (id) => {
@@ -49,18 +51,25 @@ const OrderDone = () => {
 					<option value={4}>Complete</option>
 				</select>
 			</div>
-			{orders?.length !== 0 ? (
-				orders?.map((order) => {
-					return (
-						<OrderItem
-							order={order}
-							name={name}
-							email={email}
-							handelCancelOrder={handelCancelOrder}
-							key={order._id}
-						/>
-					);
-				})
+			{isFetching ? (
+				<Stack
+					sx={{ color: "grey.500" }}
+					spacing={2}
+					direction="row"
+					paddingLeft="16px"
+				>
+					<CircularProgress size={30} color="info" />
+				</Stack>
+			) : orders?.length ? (
+				orders.map((order) => (
+					<OrderItem
+						key={order._id}
+						order={order}
+						name={name}
+						email={email}
+						handelCancelOrder={handelCancelOrder}
+					/>
+				))
 			) : (
 				<div className={cx("no-item-order")}>
 					<div className={cx("no-item-order-title")}>
@@ -71,7 +80,7 @@ const OrderDone = () => {
 							<ion-icon
 								name="arrow-undo-outline"
 								style={{ margin: "0 4px" }}
-							></ion-icon>
+							/>
 							Continue shopping
 						</Link>
 					</div>
